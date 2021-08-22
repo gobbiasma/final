@@ -192,7 +192,7 @@ def get_args():
     # arguments for training
     #parser.add_argument('--nrows', type = int , default = 3616)
 
-    parser.add_argument('--out', type=str, default='E:/2 MASTER/Memoire/07-12-2021 (file csv)/data')
+    parser.add_argument('--out', type=str, default='./')
     return parser.parse_args()
 
 def main():
