@@ -2,7 +2,7 @@
 import os
 import pandas as pd
 import argparse
-from glob import glob
+
 
 
 def create_annotation(path, a):
@@ -12,7 +12,7 @@ def create_annotation(path, a):
     #images_path = "../input/mamo-croping/crop/*.png"
     #masks_path = os.path.join(path,'Ground-truths')
     
-   images = sorted(glob(path))
+   images = os.listdir(path)
     #masks = os.listdir(masks_path)
    Calc_images = []
    Mass_images = []
@@ -42,6 +42,10 @@ def create_annotation(path, a):
 
    annotation = annotation.reset_index()
 
+   annotation = pd.concat([Mass])
+
+   annotation = annotation.reset_index()
+
    return annotation
 
 def get_args():
@@ -50,7 +54,7 @@ def get_args():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     # set your environment
-    parser.add_argument('--path',type=str,default='../input/mamo-croping/crop/*.png')
+    parser.add_argument('--path',type=str,default='../input/mamo-croping/crop')
     parser.add_argument('--a', type=str, default = '0')
     parser.add_argument('--folder_image_name', type=str, default='crop')
     # arguments for training
