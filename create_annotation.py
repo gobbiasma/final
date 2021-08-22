@@ -38,7 +38,7 @@ def create_annotation(path, a):
    Mass['img'] = Mass_images
    Mass['target'] = 1
 
-   annotation = pd.concat([Calc], [Mass])
+   annotation = pd.concat([Calc, Mass])
 
    annotation = annotation.reset_index()
 
