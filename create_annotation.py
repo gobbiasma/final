@@ -68,7 +68,7 @@ def main():
         print("path created")
         os.mkdir(args.out+'/target')
     
-    df = create_annotation(args.path, args.a, args.folder_image_name)
+    df = create_annotation(args.path, args.a)
 
     df.to_csv(os.path.join(args.out,'target.csv'),index=False)
 
