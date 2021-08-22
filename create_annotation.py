@@ -7,24 +7,35 @@ import argparse
 def create_annotation(path, a):
 
    
-    images_path = os.path.join(path)
+    #images_path = "../input/mamo-croping/crop/*.png"
     #masks_path = os.path.join(path,'Ground-truths')
     
-    images = os.listdir(images_path)
+   images = sorted(glob(images_path))
     #masks = os.listdir(masks_path)
+   Calc = []
+   Mass = []
+#print(images[0])
 
-    covid_images =[image for image in images]
-    #no_covid_images =[image for image in images if 'mask_'+image not in masks]
+   for img in images: 
+       if "Calc" in img:
+           Calc.append(img)
+   for img in images: 
+       if "Mass" in img:
+           Mass.append(img)
+       
 
-    covid = pd.DataFrame(columns=['img','target'])
-    #no_covid = pd.DataFrame(columns=['img','target'])
+    clac_images =[image for image in Calc]
+    mass_images =[image for image in Mass]
 
-    covid['img'] = covid_images
-    covid['target'] = a
-    #no_covid['img'] = no_covid_images
-    #no_covid['target'] = 0
+    clac_images = pd.DataFrame(columns=['img','target'])
+    mass_images = pd.DataFrame(columns=['img','target'])
 
-    annotation = pd.concat([covid])
+    clac_images['img'] = clac_images
+    clac_images['target'] = a
+    mass_images['img'] = mass_images
+    mass_images['target'] = 1
+
+    annotation = pd.concat([clac_images])
 
     annotation = annotation.reset_index()
 
@@ -36,15 +47,15 @@ def get_args():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     # set your environment
-    parser.add_argument('--path',type=str,default='E:/2 MASTER/Memoire/07-06-2021 (croped)/covid_croped/dataset')
+    parser.add_argument('--path',type=str,default='../input/mamo-croping/crop/*.png')
     parser.add_argument('--a', type=str, default = '0')
-    parser.add_argument('--folder_image_name', type=str, default='test')
+    parser.add_argument('--folder_image_name', type=str, default='crop')
     # arguments for training
-    #parser.add_argument('--img_size', type = int , default = 224)
+    #parser.add_argument('--img_size', type = int , default = 800)
 
     #parser.add_argument('--load_model', type=str, default='best_checkpoint.pt', help='.pth file path to load model')
 
-    parser.add_argument('--out', type=str, default='E:/2 MASTER/Memoire/07-06-2021 (croped)/covid_croped/dataset')
+    parser.add_argument('--out', type=str, default='./')
     return parser.parse_args()
 
 def main():
