@@ -36,7 +36,7 @@ def get_args():
     # set your environment
     parser.add_argument('--path_data',type=str,default='E:/2 MASTER/Memoire/07-06-2021 (croped)')
     parser.add_argument('--path_target', type=str, default='E:/2 MASTER/Memoire/07-06-2021 (croped)/covid_croped/dataset')
-    parser.add_argument('--out', type=str, default='E:/2 MASTER/Memoire/07-06-2021 (croped)')
+    parser.add_argument('--out', type=str, default='./')
     
     return parser.parse_args()
 
