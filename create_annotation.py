@@ -24,16 +24,16 @@ def create_annotation(path, a):
            Mass.append(img)
        
 
-    clac_images =[image for image in Calc]
-    mass_images =[image for image in Mass]
+    #clac_images =[image for image in Calc]
+    #mass_images =[image for image in Mass]
 
-    clac_images = pd.DataFrame(columns=['img','target'])
-    mass_images = pd.DataFrame(columns=['img','target'])
+    Calc = pd.DataFrame(columns=['img','target'])
+    Mass = pd.DataFrame(columns=['img','target'])
 
-    clac_images['img'] = clac_images
-    clac_images['target'] = a
-    mass_images['img'] = mass_images
-    mass_images['target'] = 1
+    Calc['img'] = calc
+    Calc['target'] = a
+    Mass['img'] = mass
+    Mass['target'] = 1
 
     annotation = pd.concat([clac_images])
 
