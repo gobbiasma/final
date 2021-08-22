@@ -5,6 +5,7 @@ import argparse
 
 
 def create_annotation(path, a):
+   
 
    
     #images_path = "../input/mamo-croping/crop/*.png"
@@ -27,19 +28,20 @@ def create_annotation(path, a):
     #clac_images =[image for image in Calc]
     #mass_images =[image for image in Mass]
 
-    Calc = pd.DataFrame(columns=['img','target'])
-    Mass = pd.DataFrame(columns=['img','target'])
+   Calc = pd.DataFrame(columns=['img','target'])
+   
+   Mass = pd.DataFrame(columns=['img','target'])
 
-    Calc['img'] = calc
-    Calc['target'] = a
-    Mass['img'] = mass
-    Mass['target'] = 1
+   Calc['img'] = calc
+   Calc['target'] = a
+   Mass['img'] = mass
+   Mass['target'] = 1
 
-    annotation = pd.concat([Calc])
+   annotation = pd.concat([Calc])
 
-    annotation = annotation.reset_index()
+   annotation = annotation.reset_index()
 
-    return annotation
+   return annotation
 
 def get_args():
 
