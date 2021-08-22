@@ -12,16 +12,16 @@ def create_annotation(path, a):
     
    images = sorted(glob(images_path))
     #masks = os.listdir(masks_path)
-   Calc = []
-   Mass = []
+   Calc_images = []
+   Mass_images = []
 #print(images[0])
 
    for img in images: 
        if "Calc" in img:
-           Calc.append(img)
+           Calc_images.append(img)
    for img in images: 
        if "Mass" in img:
-           Mass.append(img)
+           Mass_images.append(img)
        
 
     #clac_images =[image for image in Calc]
@@ -35,7 +35,7 @@ def create_annotation(path, a):
     Mass['img'] = mass
     Mass['target'] = 1
 
-    annotation = pd.concat([clac_images])
+    annotation = pd.concat([Calc])
 
     annotation = annotation.reset_index()
 
