@@ -12,7 +12,7 @@ def create_annotation(path, a):
     #images_path = "../input/mamo-croping/crop/*.png"
     #masks_path = os.path.join(path,'Ground-truths')
     
-   images = sorted(glob(images_path))
+   images = sorted(glob(path))
     #masks = os.listdir(masks_path)
    Calc_images = []
    Mass_images = []
