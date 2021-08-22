@@ -33,9 +33,9 @@ def create_annotation(path, a):
    
    Mass = pd.DataFrame(columns=['img','target'])
 
-   Calc['img'] = calc
+   Calc['img'] = Calc_images
    Calc['target'] = a
-   Mass['img'] = mass
+   Mass['img'] = Mass_images
    Mass['target'] = 1
 
    annotation = pd.concat([Calc])
