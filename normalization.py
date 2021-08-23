@@ -9,7 +9,7 @@ import os
 def Normalization(path_data, out):
 
     #df = pd.read_csv(os.path.join(path_target,'target.csv'))
-    housing = pd.read_csv(os.path.join(path_data,".csv"))
+    housing = pd.read_csv(os.path.join(path_data,"data.csv"))
     df = housing.drop(['0','1','2','3','4','5','6','7'], axis=1)
     x_array = housing.drop(['index','img','target'], axis=1)
     
