@@ -6,15 +6,15 @@ import argparse
 import pandas as pd
 import os
 
-def Normalization(path_data, path_target, out):
+def Normalization(path_data, out):
 
     #df = pd.read_csv(os.path.join(path_target,'target.csv'))
-    housing = pd.read_csv(os.path.join(path_data,"data_concat_non_normaliz_2_class.csv"))
+    housing = pd.read_csv(os.path.join(path_data,".csv"))
     df = housing.drop(['0','1','2','3','4','5','6','7'], axis=1)
     x_array = housing.drop(['index','img','target'], axis=1)
     
     #column_names = ['index','img','target']
-    #df = pd.read_csv(os.path.join(path_data,"data_concat_non_normaliz.csv"), names=column_names)
+    #df = pd.read_csv(os.path.join(path_data,"data.csv"), names=column_names)
     
     scaler = preprocessing.MinMaxScaler()
     names = x_array.columns
@@ -42,7 +42,7 @@ def get_args():
 
 def main():
     args = get_args()
-    Normalization(args.path_data, args.path_target, args.out)
+    Normalization(args.path_data, args.out)
 
 if __name__ == '__main__':
 
