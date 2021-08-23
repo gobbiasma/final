@@ -18,7 +18,7 @@ def get_args():
 
     # set your environment
     parser.add_argument('--path', type=str, default = 'E:/2 MASTER/Memoire/07-06-2021 (croped)')
-    parser.add_argument('--out', type=str, default = 'E:/2 MASTER/Memoire/07-06-2021 (croped)')
+    parser.add_argument('--out', type=str, default = './')
     return parser.parse_args()
 
 def main():
@@ -27,7 +27,7 @@ def main():
 
     args = get_args()
 
-    df = pd.read_csv(os.path.join(args.path,'data_concat.csv')) #data_concat_non_normaliz
+    df = pd.read_csv(os.path.join(args.path,'data_normaliz_2class.csv')) #data_concat_non_normaliz
 
     # Declare feature vector and target variable
 
