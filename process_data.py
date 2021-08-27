@@ -223,8 +223,8 @@ def main():
 
     np_data = np.concatenate(data)
 
-    add normalization
-    data = preprocessing.normalize(data)
+    #add normalization
+    #data = preprocessing.normalize(data)
 
     feature_df = pd.DataFrame(data)
 
