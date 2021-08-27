@@ -208,7 +208,7 @@ def main():
     #df = pd.read_csv(os.path.join(args.path,'target.csv'))
     df = create_annotation(args.path, 0)
 
-    #kernels = gabor_kernels(5,8,39,39)
+    kernels = gabor_kernels(5,8,39,39)
 
     data = []
 
@@ -223,8 +223,8 @@ def main():
 
     np_data = np.concatenate(data)
 
-    #add normalization
-    #data = preprocessing.normalize(data)
+    add normalization
+    data = preprocessing.normalize(data)
 
     feature_df = pd.DataFrame(data)
 
