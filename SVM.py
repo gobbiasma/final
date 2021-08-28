@@ -27,7 +27,7 @@ def main():
 
     args = get_args()
 
-    df = pd.read_csv(os.path.join(args.path,'data_normaliz_2class.csv')) #data_concat_non_normaliz
+    df = pd.read_csv(args.path) #data_concat_non_normaliz
 
     # Declare feature vector and target variable
 
